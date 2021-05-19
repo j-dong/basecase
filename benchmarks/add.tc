@@ -1,0 +1,9 @@
+add : (x: int, y: int) -> int;
+spec
+    true -> x + y;
+seeds;
+inputs
+    (0, 0), (1, 0), (0, 1), (1, 1), (5, 3), (2, 53);
+grammar + 1, - 1, * 2;
+boolGrammar inherit == 1, != 1, < 1, > 1, <= 1, >= 1;
+correctness 5.0;

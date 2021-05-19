@@ -1,0 +1,18 @@
+levenshtein : (a: int[], b: int[], x: int, y: int) -> int;
+spec
+    subarray_equals(a, b, x, y) -> 0,
+    x == 0 -> y,
+    y == 0 -> x,
+    a[x - 1] == b[y - 1] -> levenshtein(a, b, x - 1, y - 1),
+    true -> 1 + min(levenshtein(a, b, x - 1, y), levenshtein(a, b, x, y - 1));
+seeds
+    (int) levenshtein(a, b, x, y - 1),
+    (int) levenshtein(a, b, x - 1, y),
+    (int) levenshtein(a, b, x - 1, y - 1),
+    (int) a[x - 1],
+    (int) b[y - 1];
+inputs
+    ([1001, 1012, 1007, 1015, 1018, 1009, 1020, 1008, 1013], [1001, 1012, 1020, 1018, 1021, 1009, 1019, 1020, 1009, 1003], 9, 10);
+grammar + 1, - 1, min 1, [] int 1;
+boolGrammar inherit == 1, != 1, < 1, > 1, <= 1, >= 1, subarray_equals 2;
+correctness 0.0;

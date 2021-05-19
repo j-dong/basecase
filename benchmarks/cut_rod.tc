@@ -1,0 +1,16 @@
+cut_rod : (p: int[], n: int, i: int) -> int;
+spec
+    n == 0 -> 0,
+    i == 0 -> -infinity,
+    true -> max(cut_rod(p, n, i - 1), p[i - 1] + cut_rod(p, n - i, n - i));
+seeds
+    (int) cut_rod(p, n, i - 1),
+    (int) cut_rod(p, n - i, n - i),
+    (int) infinity,
+    (int) -infinity,
+    (int) p[i - 1];
+inputs
+    ([1, 5, 8, 9, 10, 17, 17, 20, 24, 30], 10, 10);
+grammar + 1, - 1, max 1, [] int 1;
+boolGrammar inherit == 1, != 1, < 1, > 1, <= 1, >= 1;
+correctness 15.0;

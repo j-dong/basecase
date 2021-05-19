@@ -1,0 +1,10 @@
+fib : (x: int) -> int;
+spec
+    x == 0 -> 0,
+    x == 1 -> 1,
+    true -> fib(x - 1) + fib(x - 2);
+seeds (int) fib(x - 1), (int) fib(x - 2);
+inputs (10);
+grammar + 1, - 1, * 2;
+boolGrammar inherit == 1, != 1, < 1, > 1, <= 1, >= 1;
+correctness 12.0;

@@ -1,0 +1,2 @@
+export JAVA=$HOME/Downloads/Tools/jdk-13.0.2/bin/java
+export ANTLR_PATH=$HOME/Downloads/Tools/antlr-4.9.2-complete.jar
